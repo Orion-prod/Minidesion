@@ -1,32 +1,3 @@
-// This is your test secret API key.
-// const stripe = require('stripe')('sk_test_51MUHg2HScDciEyATMkgPmmHWSANrCwdRLtOawEoZnOOxsJk3wfragu36qCoMUdLmvsqlpS8dYBY9fxRFkV8KNAHU00yV5LlD2h');
-// const express = require('express');
-// const app = express();
-// app.use(express.static('public'));
-
-// const YOUR_DOMAIN = 'http://localhost:4242';
-
-// app.post('/create-checkout-session', async (req, res) => {
-//   const session = await stripe.checkout.sessions.create({
-//     line_items: [
-//       {
-//         // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-//         price: 'price_1MUHvYHScDciEyAT3BkRy1oE',
-//         quantity: 1,
-//       },
-//     ],
-//     mode: 'payment',
-//     success_url: `${YOUR_DOMAIN}/index.html`,
-//     cancel_url: `${YOUR_DOMAIN}/index.html`,
-//   });
-
-//   res.redirect(303, session.url);
-// });
-
-// app.listen(4242, () => console.log('Running on port 4242'));
-
-
-
 // Paypal
 
 // For a fully working example, please see:
@@ -106,3 +77,17 @@ async function generateAccessToken() {
   const data = await response.json();
   return data.access_token;
 }
+
+
+const toggle = document.querySelector("#toggle-button");
+const open = document.querySelector(".open");
+const close = document.querySelector(".close");
+const header = document.querySelector("header");
+
+console.log(toggle)
+
+toggle.addEventListener("click", () => {
+    open.classList.toggle("active");
+    close.classList.toggle("active");
+    header.classList.toggle("active")
+})

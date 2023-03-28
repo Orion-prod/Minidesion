@@ -9,7 +9,12 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div id="toggle-button">
+            <ion-icon name="close" class="close"></ion-icon>
+            <ion-icon name="home-outline" class="open"></ion-icon>
+        </div>
         <nav>
+            
             <ul>
                 <li><img src="img/image0.jpeg"></li>
                 <li><a href="#what">Notre produit</a></li>
@@ -23,12 +28,13 @@
         
 
         <section class="what">
-            <h1>D'où vient la bougie du sud</h1>
+            
             <img src="img/imagebougiedemo.JPG" alt="image temporaire">
             <div class="side">
                 <h1 class="slogan">Notre Duo de Saison</h1>
             </div>
             <div class="below">
+                <h1>D'où vient la bougie du sud</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, adipisci reiciendis dolorum beatae molestiae reprehenderit doloribus mollitia ut natus dolor eligendi tempora porro distinctio quasi cumque in dolores doloremque enim?
                 Repellat, aliquid sapiente consequatur aperiam nulla dolorem earum, quos accusantium quisquam nobis architecto temporibus praesentium optio repellendus enim, voluptas voluptatum nisi illo odit facilis commodi autem minima adipisci quibusdam. Mollitia.
                 Dolorum, distinctio fugiat. Doloremque dolore voluptates mollitia expedita voluptatibus hic eligendi laudantium ducimus inventore tenetur quod eos asperiores, tempora vitae repellendus consequatur. Eius nam facere ipsam minus velit ab ipsa.
@@ -55,7 +61,21 @@
             <div id="paypal-button-container"></div>
         </section>
 
-        <script src="index.js"></script>
+        
+        <script>
+            const toggle = document.querySelector("#toggle-button");
+            const open = document.querySelector(".open");
+            const close = document.querySelector(".close");
+            const nav = document.querySelector("nav");
+
+            console.log(toggle)
+
+            toggle.addEventListener("click", () => {
+                open.classList.toggle("active");
+                close.classList.toggle("active");
+                nav.classList.toggle("active")
+            })
+        </script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <!-- Replace "test" with your own sandbox Business account app client ID -->
