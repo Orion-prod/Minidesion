@@ -17,17 +17,17 @@
             
             <ul>
                 <li><img src="img/image0.jpeg"></li>
-                <li><a href="#what">Notre produit</a></li>
+                <li><a href="#purchase">Notre produit</a></li>
                 <li><a href="#purchase">Acheter les bougies</a></li>
-                <li><a href="">D'où vient l'entreprise</a></li>
-                <li><a href="">Nous contacter</a></li>
+                <li><a href="#what">D'où vient l'entreprise</a></li>
+                <li><a href="#contact">Nous contacter</a></li>
                 <li><a href="http://instagram.com/bougiedusud" target="_BLANK"><ion-icon name="logo-instagram"></ion-icon></a></li>
             </ul>
             <img src="img/wave.png" id="svg">
         </nav>
         
 
-        <section class="what">
+        <section class="what" id="what">
             
             <img src="img/imagebougiedemo.JPG" alt="image temporaire">
             <div class="side">
@@ -43,13 +43,14 @@
             </div>
         </section>
 
-        <section class="purchase">
+        <section class="purchase" id="purchase">
             <div class="stripe">
                 <div class="product">
                     <img src="img/imagebougiedemo.JPG" alt="The cover of Stubborn Attachments" />
                     <div class="description">
                         <h3>Pack Bougie du sud</h3>
-                        <h5>16.00 €</h5>
+                        <h5>16.99 €</h5>
+                        <h5>(transport inclus)</h5>
                     </div>
                 </div>
                 <!-- Stripe -->
@@ -61,20 +62,48 @@
             <div id="paypal-button-container"></div>
         </section>
 
+        <section id="contact">
+            <h3>Nous contacter</h3>
+            <p>Pour tout problème, veuillez nous contacter directement sur <a href="http://instagram.com/bougiedusud" target="_BLANK">Instagram <ion-icon name="logo-instagram"></ion-icon></a>,<br>
+                ou par mail à l'adresse suivante :<br>
+                <a href="mailto:bougiedusud.com" target="_BLANK">bougiedusud@gmail.com</a></p>
+        </section>
+
         
         <script>
             const toggle = document.querySelector("#toggle-button");
             const open = document.querySelector(".open");
             const close = document.querySelector(".close");
             const nav = document.querySelector("nav");
+            const svg = document.getElementById("svg");
+            const menu = document.querySelector("nav ul");
+            const menuButtons = document.querySelectorAll("nav ul li");
 
-            console.log(toggle)
+            console.log(toggle);
+
+            function whenToggle() {
+                open.classList.toggle("active");
+                close.classList.toggle("active");
+                nav.classList.toggle("active");
+                menu.classList.toggle("active");
+                svg.classList.toggle("active");
+            }
 
             toggle.addEventListener("click", () => {
                 open.classList.toggle("active");
                 close.classList.toggle("active");
-                nav.classList.toggle("active")
-            })
+                nav.classList.toggle("active");
+                menu.classList.toggle("active");
+                svg.classList.toggle("active");
+            });
+
+            menuButtons.forEach(menuButton => menuButton.addEventListener("click", () => {
+                open.classList.toggle("active");
+                close.classList.toggle("active");
+                nav.classList.toggle("active");
+                menu.classList.toggle("active");
+                svg.classList.toggle("active");
+            }));
         </script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -94,7 +123,7 @@
                 return actions.order.create({
                 purchase_units: [{
                     amount: {
-                    value: '16.00', // Can also reference a variable or function
+                    value: '16.99', // Can also reference a variable or function
                     }
                 }]
                 });

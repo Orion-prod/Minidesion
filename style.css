@@ -218,6 +218,10 @@ section.purchase {
   opacity: 0.8;
 }  */
 
+#contact {
+  text-align: center;
+}
+
 #paypal-button-container {
   width: 20vw;
 }
@@ -225,14 +229,19 @@ section.purchase {
 @media screen and (max-width: 420px) {
 
   nav {
-    height: 100%;
-    display: none;
+    height: 10vh;
+    transition: 0.5s;
   }
 
   nav ul {
     flex-direction: column;
     padding: 0;
     transform: scale(1.8);
+    display : none;
+  }
+
+  nav ul.active {
+    display : flex;
   }
 
   nav ul li {
@@ -240,6 +249,10 @@ section.purchase {
   }
 
   #svg {
+    margin-top: 10vh;
+  }
+
+  #svg.active {
     display: none;
   }
 
@@ -282,6 +295,8 @@ nav.active {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  height: 100%;
+  transition: 1s;
 }
 
 .what h1 {
@@ -302,8 +317,7 @@ nav.active {
   font-size: 6vw;
   }
 
-.paypal-button-container {
-    width: 65vw;
-    padding: 0 5vw;
+#paypal-button-container {
+    width: 50vw;
   }
 }
