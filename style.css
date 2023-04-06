@@ -19,6 +19,7 @@ nav {
   flex-direction: column;
   position: fixed;
   top: 0;
+  z-index: 200;
 }
 
 span {
@@ -37,7 +38,7 @@ nav ul {
   display: flex;
   justify-content: left;
   align-items: center;
-  margin: 1vh 0 0 0;
+  margin: 2vh 0 0 0;
   width: 100%;
 }
 
@@ -111,7 +112,7 @@ nav ul li img {
   color: #000;
 }
 
-.what img {
+.what img.main {
   width: 30vw;
   height: 30vw;
   border: solid 2px black;
@@ -131,9 +132,38 @@ nav ul li img {
   grid-column: 1 / 3;
 }
 
-.below p {
-  margin: 0 0 0 2vw;
+.below ul {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.below ul li {
+  width: 25vw;
+  margin: 0 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.below h4 {
   font-size: 2vw;
+  margin: 1vh 0;
+}
+
+.below p {
+  font-size: 1.5vw;
+  text-justify: inter-word;
+  width: 25vw;
+  margin: 1vh 0;
+}
+
+.below img {
+  width: 25vw;
+  height: auto;
+  border-radius: 10px;
 }
 
 
@@ -220,6 +250,7 @@ section.purchase {
 
 #contact {
   text-align: center;
+  font-size: 1.5vw;
 }
 
 #paypal-button-container {
@@ -263,6 +294,7 @@ section.purchase {
 
   #toggle-button {
     display: block;
+    z-index: 250;
   }
 
   #toggle-button ion-icon {
@@ -272,52 +304,88 @@ section.purchase {
     font-size: 12vw;
     color: var(--bg-color);
     padding: 0;
-}
+  }
 
-.open {
-  visibility: visible;
-  transform: scale(0.8);
-}
+  .open {
+    visibility: visible;
+    transform: scale(0.8);
+  }
 
-.close {
-  visibility: hidden;
-}
+  .close {
+    visibility: hidden;
+  }
 
-.open.active {
-  visibility: hidden;
-}
+  .open.active {
+    visibility: hidden;
+  }
 
-.close.active {
-  visibility: visible;
-}
+  .close.active {
+    visibility: visible;
+  }
 
-nav.active {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 100%;
-  transition: 1s;
-}
+  nav.active {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    transition: 1s;
+  }
 
-.what h1 {
-  font-size: 10vw;
-}
+  .what h1 {
+    font-size: 10vw;
+  }
 
-.below p {
-  font-size: 4vw;
-}
+  .below ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.product img {
+  .below ul li {
+    width: 80vw;
+    text-align: center;
+    margin: 0 0 5vh 0;
+  }
+
+  .below h4 {
+    font-size: 4vw;
+  }
+
+  .below p {
+    font-size: 3vw;
+    width: 80vw;
+    text-align: center;
+  }
+
+  .below img {
+    width: 80vw;
+    height: auto;
+  }
+
+  .product img {
     width: 60vw;
     height: 60vw;
-  }
+    }
 
-.purchase h3,
-.purchase h5 {
-  font-size: 6vw;
-  }
+  .purchase h3,
+  .purchase h5 {
+    font-size: 6vw;
+    }
 
-#paypal-button-container {
-    width: 50vw;
-  }
+  #paypal-button-container {
+      width: 50vw;
+    }
+
+    #contact {
+      font-size: 4vw;
+    }
+}
+
+#contact a {
+  text-decoration: none;
+  color: var(--creme);
+  text-shadow: 1px 1px black;
+}
+
+#contact ion-icon {
+  transform: translateY(15px);
 }
